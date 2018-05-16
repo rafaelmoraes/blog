@@ -1,0 +1,60 @@
+### Footer ###
+# show_license: true
+# show_social_links: true
+
+footer:
+  email: roliveira.moraes@gmail.com
+  rss_path: feed.xml
+  github_username:  rafaelmoraes
+  twitter_username: rafaelmoraesdev
+  linkedin_username: rafael-moraes-95986659
+
+#RSS settings
+rss: true
+
+# Build settings
+markdown: kramdown
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+theme: minima
+
+### SEO ###
+google_analytics: UA-119153666-1
+
+title: Rafael Moraes
+url: "https://rafaelmoraes.tech"
+permalink: /:title
+author: Rafael Moraes
+
+twitter:
+  username: rafaelmoraesdev
+
+baseurl: "" #Dependência do github pages
+description: "" #Dependência do github pages
+
+timezone: America/Sao_Paulo
+
+defaults:
+  -
+    scope:
+      path: ''
+    values:
+      image: /assets/logo.png
+  -
+    scope:
+      path: '_posts/en'
+    values:
+      layout:  'post'
+      lang: 'en'
+  -
+    scope:
+      path: '_posts/pt_BR'
+    values:
+      layout: 'post'
+      lang: 'pt_BR'
+
+disqus:
+  shortname: rafaelmoraes-tech

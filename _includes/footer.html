@@ -1,0 +1,35 @@
+<footer class="site-footer h-card wrapper">
+  <data class="u-url" href="{{ '/' | relative_url }}"></data>
+
+  {% assign show_social_links = true %}
+
+  {% if site.show_social_links != null %}
+    {% assign show_social_links = site.show_social_links %}
+  {% endif %}
+
+  {% if page.show_social_links != null %}
+    {% assign show_social_links = page.show_social_links %}
+  {% endif %}
+
+  {% if show_social_links %}
+    <section class="social-contacts">
+      {%- include social.html -%}
+    </section>
+  {% endif %}
+
+  {% assign show_license = true %}
+
+  {% if site.show_license != null %}
+    {% assign show_license = site.show_license %}
+  {% endif %}
+
+  {% if page.show_license != null %}
+    {% assign show_license = page.show_license %}
+  {% endif %}
+
+  {% if show_license %}
+    <section class="license">
+      {{ site.data.i18n[page.lang].footer.license }}
+    </section>
+  {% endif %}
+</footer>

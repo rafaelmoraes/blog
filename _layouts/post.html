@@ -1,0 +1,49 @@
+---
+layout: layout-default
+---
+{% assign i18n = site.data.i18n[page.lang] %}
+
+<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">
+      {{ page.title | escape }}
+    </h1>
+
+    <p class="post-meta">
+      <span class="post-published-at">
+        <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+            {{ page.date | date: "%-d" }}
+            {{ i18n.post.published_at.first_separator }}
+            {% assign month_index = page.date | date: "%-m" | plus: 0 %}
+            {{ i18n.date.month_names[month_index] }}
+            {{ i18n.post.published_at.second_separator }}
+            {{ page.date | date: '%Y' }}
+        </time>
+      </span>
+      {% if page.read_in %}
+        <span class="post-read-in">
+            {% if page.read_in == 1 %}
+            {{ i18n.post.read_in.singular | replace: '#', page.read_in }}
+          {% else %}
+            {{ i18n.post.read_in.plural | replace: '#', page.read_in }}
+          {% endif %}
+        </span>
+      {% endif %}
+
+      <span itemprop="author" itemscope itemtype="http://schema.org/Person" hidden>
+        <span itemprop="name" class="p-author h-card">
+          {{ page.author }}
+        </span>
+      </span>
+    </p>
+  </header>
+
+  <section class="post-content" itemprop="articleBody">
+    {{ content }}
+  </section>
+
+  {%- if site.disqus.shortname -%}
+    {%- include disqus-comments.html -%}
+  {%- endif -%}
+</article>

@@ -1,0 +1,26 @@
+<header class="site-header">
+  {% if page.layout == "index" %}
+    {% assign pages = site.pages | where:'layout','about' |where:'lang',page.lang %}
+  {% else %}
+    {% assign pages = site.pages | where:'layout','index' |where:'lang',page.lang %}
+  {% endif %}
+  {% assign url = pages.first.url %}
+  <a class="site-title" href="{{ url | relative_url | default: '/'}}" >
+    {{ site.title | escape }}
+  </a>
+
+  {% if page.translations %}
+    <section class="site-header-language-alternatives" >
+       {% for post_url in page.translations %}
+        {% if page.layout == 'post' %}
+          {% assign found = site.posts |where:'url',post_url %}
+        {% else %}
+          {% assign found = site.pages |where:'url',post_url %}
+        {% endif %}
+        <a href="{{ post_url | relative_url }}">
+          {{ site.data.i18n[found.first.lang].header.available_in }}
+        </a>
+      {% endfor %}
+    </section>
+  {% endif %}
+</header>

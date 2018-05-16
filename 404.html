@@ -1,0 +1,13 @@
+---
+layout: layout-default
+show_license: false
+permalink: /404.html
+---
+<section class="page-not-found">
+  <h1>404 :(</h1>
+  {{ i18n }}
+  {% for i18n in site.data.i18n %}
+    <h2>{{ i18n.last.errors.not_found }}</h2>
+    <p>{{ i18n.last.errors.hint_not_found }}</p>
+  {% endfor %}
+</section>

@@ -1,0 +1,12 @@
+{% if page.translations %}
+  {% for alternate_url in page.translations %}
+    {% if page.layout == 'post' %}
+      {% assign found = site.posts |where:'url',alternate_url %}
+    {% else %}
+      {% assign found = site.pages |where:'url',alternate_url %}
+    {% endif %}
+    {% assign alternate = found.first %}
+
+    <link rel="alternate" hreflang="{{ alternate.lang }}" href="{{ alternate_url | absolute_url }}" />
+  {% endfor %}
+{% endif %}

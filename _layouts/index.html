@@ -1,0 +1,42 @@
+---
+layout: layout-default
+---
+{% assign i18n = site.data.i18n[page.lang] %}
+
+{%- if page.short_about_me -%}
+  <section class="short-about-me">{{ page.short_about_me }}</section>
+{%- endif -%}
+
+<section class="post-list">
+  {%- if site.posts.size > 0 -%}
+      {%- assign last_post_year = "" -%}
+
+      {% assign posts = site.posts |where:"lang", page.lang %}
+      {%- for post in posts -%}
+        {%- assign current_post_year = post.date | date: '%Y' -%}
+
+        {%- if current_post_year != last_post_year -%}
+          <p>
+            <span class="period-title">
+             {% assign month_index = post.date | date: "%-m" | plus: 0 %}
+             {{ i18n.date.month_names[month_index] }} - {{ current_post_year }}
+            </span>
+          </p>
+
+        {%- endif -%}
+
+        <p>
+          <h3 class="post-title">
+            <a href="{{  post.url | relative_url }}">
+              {{ post.title }}
+            </a>
+          </h3>
+          <a class="post-link" href="{{ post.url | relative_url }}">
+            {{ post.url | absolute_url }}
+          </a>
+        </p>
+
+        {%- assign last_post_year = current_post_year -%}
+      {%- endfor -%}
+  {%- endif -%}
+</section>

@@ -1,0 +1,4 @@
+---
+layout: default
+---
+Sitemap: {{ 'sitemap.xml' | absolute_url }}

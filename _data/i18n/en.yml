@@ -1,0 +1,33 @@
+header:
+  available_in: "Available in English"
+
+footer:
+  license: '<a target="_blank" href="https://creativecommons.org/licenses/by/4.0/legalcode" >license</a>'
+
+errors:
+  not_found: "Page not found."
+  hint_not_found: "Maybe you'll find it <a href='/posts-in-english'>here</a>."
+
+post:
+  published_at:
+    first_separator: ' '
+    second_separator: ' '
+  read_in:
+    singular: "Read in # minute"
+    plural: "Read in # minutes"
+
+date:
+  month_names:
+  -
+  - January
+  - February
+  - March
+  - April
+  - May
+  - June
+  - July
+  - August
+  - September
+  - October
+  - November
+  - December

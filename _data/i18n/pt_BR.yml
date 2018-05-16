@@ -1,0 +1,33 @@
+header:
+  available_in: "Disponível em Português"
+
+footer:
+  license: '<a target="_blank" href="https://creativecommons.org/licenses/by/4.0/legalcode" >licença</a>'
+
+errors:
+  not_found: "Página não encontrada."
+  hint_not_found: "Talvez você a encontre <a href='/'>aqui</a>."
+
+post:
+  published_at:
+    first_separator: ' de '
+    second_separator: ' de '
+  read_in:
+    singular: "Leia em # minuto"
+    plural: "Leia em # minutos"
+
+date:
+  month_names:
+  -
+  - Janeiro
+  - Fevereiro
+  - Março
+  - Abril
+  - Maio
+  - Junho
+  - Julho
+  - Agosto
+  - Setembro
+  - Outubro
+  - Novembro
+  - Dezembro
