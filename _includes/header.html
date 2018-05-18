@@ -1,26 +1,37 @@
-<header class="site-header">
-  {% if page.layout == "index" %}
-    {% assign pages = site.pages | where:'layout','about' |where:'lang',page.lang %}
-  {% else %}
-    {% assign pages = site.pages | where:'layout','index' |where:'lang',page.lang %}
-  {% endif %}
-  {% assign url = pages.first.url %}
-  <a class="site-title" href="{{ url | relative_url | default: '/'}}" >
-    {{ site.title | escape }}
-  </a>
+{% assign i18n_aria = site.data.i18n[page.lang].aria.header %}
 
+{% if page.layout == "index" %}
+  {% assign pages = site.pages | where:'layout','about' %}
+  {% assign aria_title_link = i18n_aria.title_links.about_author %}
+{% else %}
+  {% assign pages = site.pages | where:'layout','index' %}
+  {% assign aria_title_link = i18n_aria.title_links.post_list %}
+{% endif %}
+
+{% assign pages = pages | where:'lang',page.lang %}
+{% assign url = pages.first.url %}
+
+<header class="site-header">
+  <h1 class="site-title">
+    <a href="{{ url | relative_url | default: '/'}}" aria-label="{{ aria_title_link }}" >
+      {{ site.title | escape }}
+    </a>
+  </h1>
   {% if page.translations %}
-    <section class="site-header-language-alternatives" >
+    <ul class="site-header-language-alternatives" >
        {% for post_url in page.translations %}
         {% if page.layout == 'post' %}
-          {% assign found = site.posts |where:'url',post_url %}
+          {% assign found = site.posts %}
         {% else %}
-          {% assign found = site.pages |where:'url',post_url %}
+          {% assign found = site.pages %}
         {% endif %}
-        <a href="{{ post_url | relative_url }}">
-          {{ site.data.i18n[found.first.lang].header.available_in }}
-        </a>
-      {% endfor %}
-    </section>
+        {% assign found = found |where:'url',post_url %}
+          <li>
+            <a href="{{ post_url | relative_url }}">
+              {{ site.data.i18n[found.first.lang].header.available_in }}
+            </a>
+          </li>
+          {% endfor %}
+    </ul>
   {% endif %}
 </header>

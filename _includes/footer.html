@@ -1,6 +1,4 @@
-<footer class="site-footer h-card wrapper">
-  <data class="u-url" href="{{ '/' | relative_url }}"></data>
-
+<footer class="site-footer">
   {% assign show_social_links = true %}
 
   {% if site.show_social_links != null %}
@@ -12,9 +10,7 @@
   {% endif %}
 
   {% if show_social_links %}
-    <section class="social-contacts">
-      {%- include social.html -%}
-    </section>
+    {%- include social.html -%}
   {% endif %}
 
   {% assign show_license = true %}
@@ -27,9 +23,11 @@
     {% assign show_license = page.show_license %}
   {% endif %}
 
+  {% assign i18n = site.data.i18n[page.lang] %}
   {% if show_license %}
     <section class="license">
-      {{ site.data.i18n[page.lang].footer.license }}
+      <h3 hidden aria-hidden="false">{{ i18n.aria.footer.license.title }}</h3>
+      {{ i18n.footer.license }}
     </section>
   {% endif %}
 </footer>

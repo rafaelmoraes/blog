@@ -3,47 +3,52 @@ layout: layout-default
 ---
 {% assign i18n = site.data.i18n[page.lang] %}
 
-<article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+<article class="post" itemscope="" itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">
+    <h1 class="post-title" itemprop="name headline"  aria-label="{{i18n.aria.post.title}} {{ page.title | escape }}.">
       {{ page.title | escape }}
     </h1>
 
-    <p class="post-meta">
-      <span class="post-published-at">
-        <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
-            {{ page.date | date: "%-d" }}
-            {{ i18n.post.published_at.first_separator }}
-            {% assign month_index = page.date | date: "%-m" | plus: 0 %}
-            {{ i18n.date.month_names[month_index] }}
-            {{ i18n.post.published_at.second_separator }}
-            {{ page.date | date: '%Y' }}
+    <section class="post-meta">
+      <h2 hidden aria-hidden="false">{{ i18n.aria.post.meta }}</h2>
+      {% capture published_at %}
+        {{ page.date | date: "%-d" }}
+        {{ i18n.post.published_at.first_separator }}
+        {% assign month_index = page.date | date: "%-m" | plus: 0 %}
+        {{ i18n.date.month_names[month_index] }}
+        {{ i18n.post.published_at.second_separator }}
+        {{ page.date | date: '%Y' }}
+      {% endcapture %}
+      <span class="post-published-at" aria-label= "{{ i18n.aria.post.published_at }}{{ published_at }}." >
+        <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished" >
+          {{ published_at }}
         </time>
       </span>
       {% if page.read_in %}
-        <span class="post-read-in">
-            {% if page.read_in == 1 %}
-            {{ i18n.post.read_in.singular | replace: '#', page.read_in }}
-          {% else %}
-            {{ i18n.post.read_in.plural | replace: '#', page.read_in }}
-          {% endif %}
+        {% if page.read_in == 1 %}
+          {% assign read_in = i18n.post.read_in.singular %}
+        {% else %}
+          {% assign read_in =  i18n.post.read_in.plural %}
+        {% endif %}
+        {% assign read_in = read_in | replace: '#', page.read_in %}
+        <span class="post-read-in" aria-label="{{ i18n.aria.post.read_in }}{{ read_in }}.">
+          {{ read_in }}
         </span>
       {% endif %}
 
-      <span itemprop="author" itemscope itemtype="http://schema.org/Person" hidden>
-        <span itemprop="name" class="p-author h-card">
-          {{ page.author }}
-        </span>
+      {% assign author = page.author | default: site.author %}
+      <span aria-label="{{ i18n.aria.post.author }}{{ author }}." itemprop="name" itemscope="author" itemtype="http://schema.org/Person" hidden>
+        {{ author }}
       </span>
-    </p>
+    </section>
   </header>
 
-  <section class="post-content" itemprop="articleBody">
+  <section class="post-content" itemprop="articleBody" >
+    <h2 hidden aria-hidden="false">{{ i18n.aria.post.content }}</h2>
     {{ content }}
   </section>
-
-  {%- if site.disqus.shortname -%}
-    {%- include disqus-comments.html -%}
-  {%- endif -%}
 </article>
+{%- if site.disqus.shortname -%}
+  {%- include disqus-comments.html -%}
+{%- endif -%}

@@ -2,41 +2,43 @@
 layout: layout-default
 ---
 {% assign i18n = site.data.i18n[page.lang] %}
+{% assign i18n_aria = i18n.aria.index.posts %}
 
-{%- if page.short_about_me -%}
-  <section class="short-about-me">{{ page.short_about_me }}</section>
-{%- endif -%}
+{% if page.short_about_me %}
+  <section class="short-about-me" >
+    <h2 hidden aria-hidden="false">{{ i18n.aria.index.short_about_me.title }}</h2>
+    {{ page.short_about_me }}
+  </section>
+{% endif %}
 
 <section class="post-list">
-  {%- if site.posts.size > 0 -%}
-      {%- assign last_post_year = "" -%}
+  <h2 hidden aria-hidden="false">{{ i18n.aria.index.posts.title }}</h2>
+  {% if site.posts.size > 0 %}
+      {% assign last_post_year = "" %}
 
       {% assign posts = site.posts |where:"lang", page.lang %}
-      {%- for post in posts -%}
-        {%- assign current_post_year = post.date | date: '%Y' -%}
+      {% for post in posts %}
+        {% assign current_post_year = post.date | date: '%Y' %}
 
-        {%- if current_post_year != last_post_year -%}
-          <p>
-            <span class="period-title">
-             {% assign month_index = post.date | date: "%-m" | plus: 0 %}
-             {{ i18n.date.month_names[month_index] }} - {{ current_post_year }}
-            </span>
-          </p>
+        {% if current_post_year != last_post_year %}
+          {% assign month_index = post.date | date: "%-m" | plus: 0 %}
+          {% assign month_name = i18n.date.month_names[month_index] %}
+          {% assign aria_period = i18n_aria.period_title |replace: '#month', month_name| replace: '#year', current_post_year %}
+          <h2 class="period-title" aria-label="{{ aria_period }}" >
+            {{ month_name }} - {{ current_post_year }}
+          </h2>
+        {% endif %}
 
-        {%- endif -%}
-
-        <p>
-          <h3 class="post-title">
-            <a href="{{  post.url | relative_url }}">
-              {{ post.title }}
-            </a>
-          </h3>
-          <a class="post-link" href="{{ post.url | relative_url }}">
-            {{ post.url | absolute_url }}
+        <h3 aria-hidden="true" class="post-title">
+          <a tabindex="-1" aria-hidden="true" href="{{  post.url | relative_url }}">
+            {{ post.title }}
           </a>
-        </p>
+        </h3>
+        <a class="post-link" href="{{ post.url | relative_url }}" aria-label="{{ i18n_aria.post_link }} {{ post.title }}" >
+          {{ post.url | absolute_url }}
+        </a>
 
-        {%- assign last_post_year = current_post_year -%}
-      {%- endfor -%}
-  {%- endif -%}
+        {% assign last_post_year = current_post_year %}
+      {% endfor %}
+  {% endif %}
 </section>

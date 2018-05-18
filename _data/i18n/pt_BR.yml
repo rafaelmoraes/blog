@@ -2,7 +2,9 @@ header:
   available_in: "Disponível em Português"
 
 footer:
-  license: '<a target="_blank" href="https://creativecommons.org/licenses/by/4.0/legalcode" >licença</a>'
+  license: >-
+    <p>Conteúdo sob a <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/legalcode" >Licença CC BY</a>.</p>
+    <p>© 2018-presente <a href="/sobre" >Rafael Moraes</a>.</p>
 
 errors:
   not_found: "Página não encontrada."
@@ -15,6 +17,47 @@ post:
   read_in:
     singular: "Leia em # minuto"
     plural: "Leia em # minutos"
+
+aria:
+  header:
+    title_links:
+      post_list: "Ir para os posts em Português."
+      about_author: "Ir para informações sobre o autor."
+  footer:
+    license:
+      title: "Seção informações legais."
+    links:
+      title: "Links relacionados ao blog."
+      email: 'Enviar e-mail para o autor: '
+      rss: 'Assinar o feed RSS.'
+      dribbble: "Ir para o Dribbble do autor."
+      facebook: "Ir para o Facebook do autor."
+      flickr: "Ir para o Flickr do autor."
+      github: "Ir para o Github do autor."
+      instagram: "Ir para o Instagram do autor."
+      linkedin: "Ir para o Linkedin do autor."
+      pinterest: "Ir para o Pinterest do autor."
+      twitter: "Ir para o Twitter do autor."
+      youtube: "Ir para o Youtube do autor."
+      stackoverflow: "Ir para o Stack Overflow do autor."
+  post:
+    title: "Título do post: "
+    meta: "Metadados do post."
+    published_at: "Data da publicação: "
+    read_in: "Tempo estimado para leitura: "
+    author: "Autor: "
+    content: Conteúdo do post.
+    comments: Comentários.
+  about:
+    title: "Informações sobre o autor."
+    image: "Foto do autor "
+  index:
+    short_about_me:
+      title: "Seção informações sobre o autor."
+    posts:
+      title: "Seção todos os posts em português."
+      period_title: "Posts de #month de #year."
+      post_link: "Ir para o post "
 
 date:
   month_names:

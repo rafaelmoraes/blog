@@ -2,7 +2,9 @@ header:
   available_in: "Available in English"
 
 footer:
-  license: '<a target="_blank" href="https://creativecommons.org/licenses/by/4.0/legalcode" >license</a>'
+  license: >-
+    <p>Content under the <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/legalcode" >License CC BY</a>.</p>
+    <p>© 2018-present <a href="/about">Rafael Moraes</a>.</p>
 
 errors:
   not_found: "Page not found."
@@ -15,6 +17,47 @@ post:
   read_in:
     singular: "Read in # minute"
     plural: "Read in # minutes"
+
+aria:
+  header:
+    title_links:
+      post_list: Go to English posts.
+      about_author: Go to informations about the author.
+  footer:
+    license:
+      title: "Section legal informations."
+    links:
+      title: "Links related with the blog."
+      email: 'Send a email to the author: '
+      rss: 'Subscribe feed RSS.'
+      dribbble: "Go to the Dribbble of author."
+      facebook: "Go to the Facebook of author."
+      flickr: "Go to the Flickr of author."
+      github: "Go to the Github of author."
+      instagram: "Go to the Instagram of author."
+      linkedin: "Go to the Linkedin of author."
+      pinterest: "Go to the Pinterest of author."
+      twitter: "Go to the Twitter of author."
+      youtube: "Go to the Youtube of author."
+      stackoverflow: "Go to the Stack Overflow of author."
+  post:
+    title: "Post title: "
+    meta: Post metadata.
+    published_at: "Date of publication: "
+    read_in: "Reading time estimated: "
+    author: "Author: "
+    content: Content of post.
+    comments: Comments.
+  about:
+    title: Details about the author.
+    image: Photo of author
+  index:
+    short_about_me:
+      title: "Section some details about the author."
+    posts:
+      title: "Section all English posts."
+      period_title: "Posts at #month de #year."
+      post_link: "Go to the post "
 
 date:
   month_names:
