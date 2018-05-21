@@ -3,7 +3,7 @@ layout: layout-default
 ---
 {% assign i18n = site.data.i18n[page.lang] %}
 
-<article class="post" itemscope="" itemtype="http://schema.org/BlogPosting">
+<article class="post" itemscope="Article" itemtype="http://schema.org/Article">
 
   <header class="post-header">
     <h1 class="post-title" itemprop="name headline"  aria-label="{{i18n.aria.post.title}} {{ page.title | escape }}.">
@@ -21,7 +21,7 @@ layout: layout-default
         {{ page.date | date: '%Y' }}
       {% endcapture %}
       <span class="post-published-at" aria-label= "{{ i18n.aria.post.published_at }}{{ published_at }}." >
-        <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished" >
+        <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished dateModified" >
           {{ published_at }}
         </time>
       </span>
@@ -38,9 +38,10 @@ layout: layout-default
       {% endif %}
 
       {% assign author = page.author | default: site.author %}
-      <span aria-label="{{ i18n.aria.post.author }}{{ author }}." itemprop="name" itemscope="author" itemtype="http://schema.org/Person" hidden>
-        {{ author }}
+      <span aria-label="{{ i18n.aria.post.author }}{{ author }}." itemprop="author" itemscope="Article" itemtype="http://schema.org/Person" hidden>
+        <span itemprop="name" >{{ author }}</span>
       </span>
+
     </section>
   </header>
 
@@ -48,6 +49,21 @@ layout: layout-default
     <h2 hidden aria-hidden="false">{{ i18n.aria.post.content }}</h2>
     {{ content }}
   </section>
+  {% if page.keywords %}
+    <span itemprop="keywords" hidden >{{ page.keywords }}</span>
+  {% endif %}
+
+  <span itemprop="publisher" itemscope='Article' itemtype="http://schema.org/Organization" hidden>
+    <span itemprop="name">{{ author }}</span>
+    <span itemprop="url">{{ site.url }}</span>
+    <span itemprop="logo" itemscope='publisher' itemtype="http://schema.org/ImageObject" >
+      <span itemprop="url" >{{ page.image | default: site.image | absolute_url }}</span>
+    </span>
+  </span>
+  <span itemprop="inLanguage" hidden >{{ page.lang |default: site.lang }}</span>
+  <span itemprop="image" hidden >{{ page.image | default: site.image | absolute_url }}</span>
+  <span itemprop="identifier url" hidden >{{ page.url | absolute_url }}</span>
+  <span itemprop="mainEntityOfPage" hidden>{{ page.url | absolute_url }}</span>
 </article>
 {%- if site.disqus.shortname -%}
   {%- include disqus-comments.html -%}

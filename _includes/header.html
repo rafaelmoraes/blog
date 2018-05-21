@@ -11,14 +11,15 @@
 {% assign pages = pages | where:'lang',page.lang %}
 {% assign url = pages.first.url %}
 
-<header class="site-header">
+<header>
+  <nav class="site-nav">
   <h1 class="site-title">
     <a href="{{ url | relative_url | default: '/'}}" aria-label="{{ aria_title_link }}" >
       {{ site.title | escape }}
     </a>
   </h1>
   {% if page.translations %}
-    <ul class="site-header-language-alternatives" >
+    <ul class="site-nav-language-alternatives" >
        {% for post_url in page.translations %}
         {% if page.layout == 'post' %}
           {% assign found = site.posts %}
@@ -34,4 +35,5 @@
           {% endfor %}
     </ul>
   {% endif %}
+  </nav>
 </header>
