@@ -38,32 +38,33 @@ layout: layout-default
       {% endif %}
 
       {% assign author = page.author | default: site.author %}
-      <span aria-label="{{ i18n.aria.post.author }}{{ author }}." itemprop="author" itemscope="Article" itemtype="http://schema.org/Person" hidden>
-        <span itemprop="name" >{{ author }}</span>
-      </span>
-
+      <div hidden aria-label="{{ i18n.aria.post.author }}{{ author }}." itemprop="author" itemscope="Article" itemtype="http://schema.org/Person">
+        <meta itemprop="name" content="{{ author }}" >
+      </div>
     </section>
   </header>
 
+  <h2 hidden aria-hidden="false">{{ i18n.aria.post.content }}</h2>
   <section class="post-content" itemprop="articleBody" >
-    <h2 hidden aria-hidden="false">{{ i18n.aria.post.content }}</h2>
     {{ content }}
   </section>
   {% if page.keywords %}
-    <span itemprop="keywords" hidden >{{ page.keywords }}</span>
+    <meta itemprop="keywords" content="{{ page.keywords }}" >
   {% endif %}
 
-  <span itemprop="publisher" itemscope='Article' itemtype="http://schema.org/Organization" hidden>
-    <span itemprop="name">{{ author }}</span>
-    <span itemprop="url">{{ site.url }}</span>
-    <span itemprop="logo" itemscope='publisher' itemtype="http://schema.org/ImageObject" >
-      <span itemprop="url" >{{ page.image | default: site.image | absolute_url }}</span>
-    </span>
-  </span>
-  <span itemprop="inLanguage" hidden >{{ page.lang |default: site.lang }}</span>
-  <span itemprop="image" hidden >{{ page.image | default: site.image | absolute_url }}</span>
-  <span itemprop="identifier url" hidden >{{ page.url | absolute_url }}</span>
-  <span itemprop="mainEntityOfPage" hidden>{{ page.url | absolute_url }}</span>
+  <div hidden itemprop="publisher" itemscope='Article' itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="{{ author }}">
+    <meta itemprop="url" content="{{ site.url }}">
+
+    <div hidden itemprop="logo" itemscope='publisher' itemtype="http://schema.org/ImageObject" >
+      <meta itemscope='logo' itemprop="url" content="{{ page.image | default: site.image | absolute_url }}">
+    </div>
+  </div>
+
+  <meta itemprop="inLanguage" content="{{ page.lang |default: site.lang }}">
+  <meta itemprop="image" content="{{ page.image | default: site.image | absolute_url }}">
+  <meta itemprop="identifier url" content="{{ page.url | absolute_url }}" >
+  <meta itemprop="mainEntityOfPage" content="{{ page.url | absolute_url }}">
 </article>
 {%- if site.disqus.shortname -%}
   {%- include disqus-comments.html -%}

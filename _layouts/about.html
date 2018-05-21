@@ -2,14 +2,14 @@
 layout: layout-default
 ---
 {% assign aria = site.data.i18n[page.lang].aria.about %}
-<section class="about-me-content" itemscope="" itemtype="http://schema.org/Person" >
+<section class="about-me-content" itemscope="WebPage" itemtype="http://schema.org/Person" >
   <h2 hidden aria-hidden="false">{{ aria.title }}</h2>
   {% if page.author_image %}
   <figure class="about-me-image"  >
     <img src="{{ page.author_image }}" alt="{{ aria.image }} {{ page.author | default: site.author }}." itemprop="image" >
   </figure>
   {% endif %}
-  <span itemprop="name" hidden>{{ page.author | default: site.author }}</span>
-  <span itemprop="description" hidden>{{ page.title }} {{ page.author | default: site.author }}</span>
+  <meta itemprop="name" content="{{ page.author | default: site.author }}">
+  <meta itemprop="description" content="{{ page.title }} {{ page.author | default: site.author }}">
   {{ content }}
 </section>
