@@ -89,7 +89,7 @@ author: Rafael Moraes
 twitter:
   username: rafaelmoraesdev
 
-baseurl: "/blog" #Dependência do github pages
+baseurl: "" #Dependência do github pages
 description: "" #Dependência do github pages
 
 timezone: America/Sao_Paulo
