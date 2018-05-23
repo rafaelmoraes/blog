@@ -1,7 +1,8 @@
 ---
-date: "2018-05-22 14:00:00"
+date: "2018-05-23 17:00:00"
 title: "Configurar HTTPS para domínio personalizado no Github Pages"
-read_in: 10
+keywords: ["Github Pages", "HTTPS", "configurar"]
+read_in: 5
 ---
 Neste artigo veremos como configurar o protocolo [HTTPS](https://pt.wikipedia.org/wiki/Hyper_Text_Transfer_Protocol_Secure) para sites com domínio personalizado hospedados no [Github Pages](https://pages.github.com/).
 
@@ -13,7 +14,7 @@ Configurar um domínio personalizado para um site hospedado no [Github Pages](ht
 
 Como não possível realizar a configuração do HTTPS diretamente no Github Pages, contornaremos esta limitação usando o servidor DNS para "informar" aos clientes que o site suporta HTTPS.
 
-Primeiramente é necessário ter certeza que o serviço de [DNS](https://pt.wikipedia.org/wiki/Sistema_de_Nomes_de_Dom%C3%ADnio) utilizado suporta entradas do tipo [CAA](https://en.wikipedia.org/wiki/DNS_Certification_Authority_Authorization) e que a certificadora também tenha suporte a este recurso, no caso deste artigo será utilizado o serviço de DNS do [GoDaddy](https://br.godaddy.com/) e a certificadora [Let's Encrypt](https://letsencrypt.org).
+Primeiramente é necessário ter certeza que o serviço de [DNS](https://pt.wikipedia.org/wiki/Sistema_de_Nomes_de_Dom%C3%ADnio) utilizado suporta entradas do tipo [CAA](https://en.wikipedia.org/wiki/DNS_Certification_Authority_Authorization), a certificadora também precisa ter suporte a este recurso, no caso deste artigo é utilizado o serviço de DNS do [GoDaddy](https://br.godaddy.com/) e a certificadora [Let's Encrypt](https://letsencrypt.org).
 
 ## Configurar a entrada CAA no DNS
 
@@ -31,7 +32,7 @@ Com todos os requisitos atendidos a próxima etapa é configurar o DNS, para ist
 
 ![Selecione a opção CAA](https://imgur.com/3ZIJxLE.png)
 
-4 - Verifique se todos os campos estão preenchidos como os da imagem abaixo, com exceção do campo "Nome completo *", o qual neste caso está preenchido com "@", pois o exemplo utiliza o domínio principal e não um subdomínio com por exemplo: blog.rafaelmoraes.tech, depois de preencher os campos corretamente, clique no botão "Salvar".
+4 - Verifique se todos os campos estão preenchidos como os da imagem abaixo, com exceção do campo "Nome completo *", o qual neste caso está preenchido com "@", pois o exemplo utiliza o domínio principal e não um subdomínio como por exemplo: blog.rafaelmoraes.tech, depois de preencher os campos corretamente, clique no botão "Salvar".
 
 ![Informar dados da entrada CAA](https://imgur.com/PE9VSo8.png)
 
