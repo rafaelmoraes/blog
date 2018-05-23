@@ -1,7 +1,7 @@
 ---
 date: "2018-05-23 17:00:00"
 title: "Configurar HTTPS para domínio personalizado no Github Pages"
-keywords: ["Github Pages", "HTTPS", "configurar"]
+keywords: "configurar HTTPS Github Pages"
 read_in: 5
 ---
 Neste artigo veremos como configurar o protocolo [HTTPS](https://pt.wikipedia.org/wiki/Hyper_Text_Transfer_Protocol_Secure) para sites com domínio personalizado hospedados no [Github Pages](https://pages.github.com/).
