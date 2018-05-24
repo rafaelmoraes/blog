@@ -1,8 +1,9 @@
 ---
-date: "2018-05-24 17:00:00"
+date: "2018-05-24 13:00:00"
 title: "Configure HTTPS for custom domain on GitHub Pages"
 keywords: "configure HTTPS GitHub Pages"
 read_in: 5
+translations: /configurar-https-para-dominio-personalizado-no-github-pages
 ---
 In this article we'll see how to configure the [HTTPS](https://en.wikipedia.org/wiki/HTTPS) protocol for site with custom domain hosted on the [GitHub Pages](https://pages.github.com/).
 
@@ -51,6 +52,7 @@ With the DNS properly configured, now is necessary to configure the GitHub Pages
 Done it, just wait few minutes(on my case was almost instant) that HTTPS will be active and therewith we finished, suggestions and reviews are welcome.
 
 ### Fontes
-[https://help.github.com/articles/securing-your-github-pages-site-with-https/](https://help.github.com/articles/securing-your-github-pages-site-with-https/)
-[https://br.godaddy.com/help/adicionar-um-registro-de-caa-27288](https://br.godaddy.com/help/adicionar-um-registro-de-caa-27288)
-[https://letsencrypt.org/docs/caa/](https://letsencrypt.org/docs/caa/)
+
+* [https://help.github.com/articles/securing-your-github-pages-site-with-https/](https://help.github.com/articles/securing-your-github-pages-site-with-https/)
+* [https://br.godaddy.com/help/adicionar-um-registro-de-caa-27288](https://br.godaddy.com/help/adicionar-um-registro-de-caa-27288)
+* [https://letsencrypt.org/docs/caa/](https://letsencrypt.org/docs/caa/)
