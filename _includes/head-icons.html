@@ -1,15 +1,15 @@
 {% for icon in site.head.icons.others %}
-  <link rel="icon" type="{{ icon.type | default: 'image/png' }}" sizes="{{ icon.sizes }}" href="{{ icon.image }}">
+  <link rel="icon" type="{{ icon.type | default: 'image/png' }}" sizes="{{ icon.sizes }}" href="{{ icon.image | absolute_url }}">
 {% endfor %}
 
 {% for apple_icon in site.head.icons.apple %}
-  <link rel="apple-touch-icon" sizes="{{ apple_icon.sizes }}" href="{{ apple_icon.image }}">
+  <link rel="apple-touch-icon" sizes="{{ apple_icon.sizes }}" href="{{ apple_icon.image | absolute_url }}">
 {% endfor %}
 
 {% for android_icon in site.head.icons.android %}
-  <link rel="icon" type="{{ android_icon.type | default: 'image/png' }}" sizes="{{ android_icon.sizes }}" href="{{ android_icon.image }}">
+  <link rel="icon" type="{{ android_icon.type | default: 'image/png' }}" sizes="{{ android_icon.sizes }}" href="{{ android_icon.image | absolute_url }}">
 {% endfor %}
 
 {% if site.head.icons.android %}
-  <link rel="manifest" href="/manifest.json">
+  <link rel="manifest" href="{{ 'manifest.json' | absolute_url }}">
 {% endif %}
