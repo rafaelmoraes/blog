@@ -80,7 +80,7 @@ theme: minima
 
 ### SEO ###
 # google_analytics: UA-119153666-1 # rafaelmoraes.tech
-# google_analytics: UA-120007953-1 # rafaelmoraes.pro
+google_analytics: UA-120007953-1 # rafaelmoraes.pro
 
 title: Rafael Moraes
 url: "https://rafaelmoraes.pro"
