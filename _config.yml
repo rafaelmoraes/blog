@@ -82,7 +82,7 @@ theme: minima
 # google_analytics: UA-119153666-1
 
 title: Rafael Moraes
-url: "https://rafaelmoraes.tech"
+url: "https://rafaelmoraes.pro"
 permalink: /:title
 author: Rafael Moraes
 
@@ -114,4 +114,4 @@ defaults:
       lang: 'pt_BR'
 
 disqus:
-  shortname: rafaelmoraes-tech
+  shortname: rafaelmoraes-pro
