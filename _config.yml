@@ -79,7 +79,7 @@ plugins:
 theme: minima
 
 ### SEO ###
-google_analytics: UA-119153666-1
+# google_analytics: UA-119153666-1
 
 title: Rafael Moraes
 url: "https://rafaelmoraes.tech"
