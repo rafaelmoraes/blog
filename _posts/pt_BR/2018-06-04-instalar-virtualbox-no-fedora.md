@@ -1,10 +1,13 @@
 ---
+date: 2018-06-04 19:25:00
+read_in: 5
+translations: /install-virtualbox-on-fedora
 title: Instalar o VirtualBox no Fedora 27 e 28
 keywords: instalar virtualbox fedora 27 28
 description: Tutorial para instalar e configurar o VirtualBox com o extension pack.
 ---
 
-A virtualização facilita o nosso dia a dia como desenvolvedor de software, tanto no ambiente de desenvolvimento quanto no ambiente de produção, entre os muitos programas de virtualização existentes talvez o mais popular seja o [VirtualBox](https://www.virtualbox.org/) e com toda a certeza ele é muito simples de usar, sendo assim este artigo mostra como instalá-lo no Fedora 27 e 28.
+A [virtualização](https://pt.wikipedia.org/wiki/Virtualiza%C3%A7%C3%A3o) facilita o nosso dia a dia como desenvolvedor de software, tanto no ambiente de desenvolvimento quanto no ambiente de produção, entre os muitos programas de virtualização existentes talvez o mais popular seja o [VirtualBox](https://www.virtualbox.org/) e com toda a certeza ele é muito simples de usar, sendo assim este artigo mostra como instalá-lo no [Fedora](https://getfedora.org/pt_BR/) 27 e 28.
 
 ## Adicionar o repositório
 
@@ -24,7 +27,7 @@ sudo dnf install -y binutils gcc make patch libgomp glibc-headers \
 glibc-devel kernel-headers kernel-devel dkms
 {% endhighlight %}
 
-Antes de prosseguir execute o comando abaixo e verifique se o seu sistema está usando a versão mais recente do [Kernel](https://pt.wikipedia.org/wiki/N%C3%BAcleo_(sistema_operacional)), caso não esteja reinicie o sistema operacional, só avance para o próximo passo após ter certeza de que está utilizando a versão mais recente do Kernel.
+Antes de prosseguir execute o comando abaixo e verifique se o seu sistema está usando a versão mais recente do [Kernel](https://pt.wikipedia.org/wiki/Linux_(n%C3%BAcleo)), caso não esteja reinicie o sistema operacional, só avance para o próximo passo após ter certeza de que está utilizando a versão mais recente do Kernel.
 
 {% highlight sh %}
 rpm -qa kernel | sort -V | tail -n 1 | sed s/kernel-// && uname -r
