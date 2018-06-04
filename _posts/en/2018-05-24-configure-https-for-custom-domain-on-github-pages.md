@@ -51,7 +51,7 @@ With the DNS properly configured, now is necessary to configure the GitHub Pages
 
 Done it, just wait few minutes(on my case was almost instant) that HTTPS will be active and therewith we finished, suggestions and reviews are welcome.
 
-### Fontes
+### Resources
 
 * [https://help.github.com/articles/securing-your-github-pages-site-with-https/](https://help.github.com/articles/securing-your-github-pages-site-with-https/)
 * [https://br.godaddy.com/help/adicionar-um-registro-de-caa-27288](https://br.godaddy.com/help/adicionar-um-registro-de-caa-27288)

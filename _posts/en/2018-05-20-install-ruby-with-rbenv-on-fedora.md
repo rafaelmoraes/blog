@@ -104,7 +104,7 @@ ruby --version
 
 With this we come to the end of this tutorial, now your Fedora supports multiple versions of Ruby simultaneously.
 
-### Fontes
+### Resources
 
 * [https://github.com/rbenv/rbenv/wiki](https://github.com/rbenv/rbenv/wiki)
 * [https://github.com/rbenv/ruby-build/wiki](https://github.com/rbenv/ruby-build/wiki)
