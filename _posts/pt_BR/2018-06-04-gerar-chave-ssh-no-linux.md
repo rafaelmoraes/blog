@@ -1,6 +1,7 @@
 ---
 date: 2018-06-04 18:00:00
 read_in: 6
+translations: /generate-ssh-key-on-linux
 title: Gerar chave SSH no Linux
 keywords: gerar criar chaves chave ssh linux fedora
 description: Guia para gerar as chaves SSH no Linux, para acessar outros dispositivos sem utilizar explicitamente uma senha.

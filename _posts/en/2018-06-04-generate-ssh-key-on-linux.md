@@ -1,6 +1,7 @@
 ---
 date: 2018-06-04 18:00:00
 read_in: 5
+translations: /gerar-chave-ssh-no-linux
 title: Generate ssh key on Linux
 keywords: generate create key keys ssh linux fedora
 description: Guide to generate the ssh keys on Linux, for access another devices without explicitly to use a password.
