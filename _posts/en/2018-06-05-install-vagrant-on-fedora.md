@@ -7,7 +7,7 @@ keyword: install use vagrant fedora 27 28
 description: Tutorial for install the Vagrant with the VirtualBox on Linux Fedora, making easier the creation and management of virtual machines.
 ---
 
-The [Vagrant](https://www.vagrantup.com) is a tool of command line([CLI](https://en.wikipedia.org/wiki/Command-line_interface)) that abstracts the complexity of main virtualizers available and allow us to create virtual machines in a way extremely simple, for use it just create the [manifest](https://en.wikipedia.org/wiki/Manifest_file) file and from this file a [virtual machine](https://en.wikipedia.org/wiki/Virtual_machine) will be provided with all what we need configured, therefore let's go see how to install it on [Fedora](https://getfedora.org).
+The [Vagrant](https://www.vagrantup.com) is a tool of command line([CLI](https://en.wikipedia.org/wiki/Command-line_interface)) that abstracts the complexity of main virtualizers available and allow us to create virtual machines in a way extremely simple, for use it just create the [manifest](https://en.wikipedia.org/wiki/Manifest_file) file and from this file a [virtual machine](https://en.wikipedia.org/wiki/Virtual_machine) will be provided with all what we need configured, therefore let's see how to install it on [Fedora](https://getfedora.org).
 
 ## Requirements
 
