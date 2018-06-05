@@ -41,7 +41,7 @@ O *Vagrantfile* utiliza a sintaxe do [Ruby](https://www.ruby-lang.org/pt/)(mas v
 
 ## Iniciar a VM
 
-Após criar o *Vagrantfile* vamos solicitar ao Vagrant que inicie a VM, o comando abaixo funciona da seguinte forma: ele procura pelo *Vagrantfile* partindo do diretório atual até a raiz do seu sistema de arquivos, depois de encontrar e ler o *Vagrantfile* será verificado se a box configurada existe localmente, caso não exista será realizado o seu download e somente então a VM será iniciada, aplicando todas a configurações presentes no *Vagrantfile*.
+Após criar o *Vagrantfile* vamos solicitar ao Vagrant que inicie a VM, o comando abaixo funciona da seguinte forma: ele procura pelo *Vagrantfile* partindo do diretório atual até a raiz do seu sistema de arquivos, depois de encontrar e ler o *Vagrantfile* será verificado se a box configurada existe localmente, caso não exista será realizado o seu download e somente então a VM será iniciada com todas a configurações definidas no *Vagrantfile*.
 
 Todo este processo pode demorar alguns minutos dependendo do seu hardware e rede, principalmente quando é necessário realizar o download da box.
 
@@ -57,7 +57,7 @@ O acesso a VM é feito via SSH, facilitando às nossas vidas o Vagrant disponibi
 vagrant ssh
 {% endhighlight %}
 
-Se tudo deu certo, agora você está logado na VM e pode fazer tudo o que você faria em uma distribuição comum, instalar programas, realizar downloads, criar aquivos e tudo estará te aguardando na próxima vez que você ligar e acessar a VM.
+Se tudo deu certo, agora você está logado na VM e pode fazer tudo o que você faria em uma distribuição comum, instalar programas, realizar downloads, criar arquivos e tudo estará te aguardando na próxima vez que você ligar e acessar a VM.
 
 Por padrão o diretório compartilhado é montado na VM em */vagrant*, mas você pode alterá-lo no *Vagrantfile* se quiser, para acessá-lo, execute.
 
@@ -85,9 +85,9 @@ vagrant destroy
 
 ## Finalizando
 
-Se você abrir o VirtualBox você poderá ver todas as VMs criadas pelo Vagrant, pois como já dito anteriormente o Vagrant não é um virtualizador, para evitar problemas futuros recomendo que você não altere as configurações da VM pelo [GUI](https://pt.wikipedia.org/wiki/Interface_gr%C3%A1fica_do_utilizador) do VirtualBox, sempre utilize o *Vagrantfile* para isso.
+Abrindo o VirtualBox você poderá ver todas as VMs criadas pelo Vagrant, pois como dito anteriormente o Vagrant não é um virtualizador, para evitar problemas futuros recomendo que você não altere as configurações da VM pelo [GUI](https://pt.wikipedia.org/wiki/Interface_gr%C3%A1fica_do_utilizador) do VirtualBox, sempre utilize o *Vagrantfile* para isso.
 
-Com isso chegamos ao deste tutorial, agora você deve ser capaz de facilmente criar maquinas virtuais com o Vagrant.
+Com isso chegamos ao fim deste tutorial e agora você deve ser capaz de facilmente criar maquinas virtuais com o Vagrant.
 
 ### Fontes
 

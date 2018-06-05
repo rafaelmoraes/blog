@@ -42,7 +42,7 @@ The *Vagrantfile* uses syntax of [Ruby](https://www.ruby-lang.org/)(but you don'
 
 ## Start VM
 
-After create the *Vagrantfile* we going to request to Vagrant that start the VM, the command below works as follows: it look up by the *Vagrantfile* beginning from current directory until the root of your file system, after to find and to read the *Vagrantfile* will be checked if the box defined in the file already there is locally, case not exists will be make your download and only then the VM will be started, with all configurations present in the *Vagrantfile*.
+After create the *Vagrantfile* we going to request to Vagrant that start the VM, the command below works as follows: it look up by the *Vagrantfile* beginning from current directory until the root of your file system, after to find and to read the *Vagrantfile* will be checked if the box defined in the file already there is locally, case not exists will be make your download and only then the VM will be started, with all configurations defined in the *Vagrantfile*.
 
 All this process can be delay depending of your hardware and network, mainly when is necessary to download of the box.
 
@@ -86,9 +86,9 @@ vagrant destroy
 
 ## Wrapping up
 
-If you open the VirtualBox you can see all VMs created by Vagrant, as already said previously the Vagrant isn't a virtualizer, for avoid future troubles I recommend that you don't change the VM configurations through VirtualBox [GUI](https://en.wikipedia.org/wiki/Graphical_user_interface), always use the *Vagrantfile* for this.
+Opening the VirtualBox you can see all VMs created by Vagrant, as said previously the Vagrant isn't a virtualizer, for avoid future troubles I recommend that you don't change the VM configurations through VirtualBox [GUI](https://en.wikipedia.org/wiki/Graphical_user_interface), always use the *Vagrantfile* for this.
 
-Then we arrived to end of this tutorial, now you should be able of easily to create virtual machines with Vagrant.
+Then we arrived to the end of this tutorial, now you should be able of easily to create virtual machines with Vagrant.
 
 ### Resources
 
