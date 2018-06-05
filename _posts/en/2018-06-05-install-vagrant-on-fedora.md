@@ -1,5 +1,5 @@
 ---
-date: 2018-06-05 15:22:00
+date: 2018-06-05 17:22:00
 translations: /instalar-vagrant-no-fedora
 read_in: 8
 title: Install Vagrant on Fedora 27 and 28
