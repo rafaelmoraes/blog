@@ -11,7 +11,7 @@ The [Vagrant](https://www.vagrantup.com) is a tool of command line([CLI](https:/
 
 ## Requirements
 
-For that Vagrant works is necessary have installed some virtualization software, you can know which are supported [here](https://www.vagrantup.com/docs/providers/),
+For Vagrant works is necessary have installed some virtualization software, you can know which are supported [here](https://www.vagrantup.com/docs/providers/),
 another requirement is that your computer needs to be able to access another by [SSH](https://en.wikipedia.org/wiki/Secure_Shell).
 
 This tutorial will be used the [VirtualBox](https://www.virtualbox.org/) for virtualization, case you don't have some requirements and not know how to install it you can follow this tutorial to [install VirtualBox](/install-virtualbox-on-fedora) and this one to [install and configure the SSH](generate-key-ssh-on-linux).
@@ -26,7 +26,7 @@ sudo dnf install -y ./vagrant*.rpm && \
 rm vagrant_*.rpm*
 {% endhighlight %}
 
-The Vagrant by default no uses conventional installation images, those that you access the site of your Linux distribution preferred, make the download and install on you machine or server, instead those images the Vagrant uses the [boxes](https://www.vagrantup.com/docs/boxes.html), that basically are images derived from official distributions, where everything that not is helpful or essential for Vagrant is dropped, anyone can create own boxes, you can find some compatible boxes of VirtualBox [here](https://app.vagrantup.com/boxes/search?utf8=%E2%9C%93&sort=created&provider=virtualbox&q=).
+The Vagrant by default not uses conventional installation images, those that you access the site of your Linux distribution preferred, make the download and install on you machine or server, instead those images the Vagrant uses the [boxes](https://www.vagrantup.com/docs/boxes.html), basically Vagrant boxes are images derived from official distributions, where everything that not is helpful or essential for Vagrant is dropped, anyone can create own boxes, you can find some boxes compatible with VirtualBox [here](https://app.vagrantup.com/boxes/search?utf8=%E2%9C%93&sort=created&provider=virtualbox&q=).
 
 For provide a virtual machine the Vagrant uses the file *Vagrantfile* where stay all details about the provisioning, for example: shared files, amount of RAM memory, IP address, shared ports, software that are installed automatically, among [others](https://www.vagrantup.com/docs/vagrantfile/).
 
