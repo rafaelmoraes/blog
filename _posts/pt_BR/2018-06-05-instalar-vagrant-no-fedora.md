@@ -1,10 +1,13 @@
 ---
-title: Instalar Vagrant no Fedora 27 e 28
+date: 2018-06-05 15:20:00
+translations: /install-vagrant-on-fedora
+read_in: 8
+title: Instalar o Vagrant no Fedora 27 e 28
 keyword: instalar vagrant fedora
-description: Tutorial para instalar o Vagrant com o VirtualBox no Linux Fedora e facilitar a criação e gerenciamento de maquinas virtuais.
+description: Tutorial para instalar o Vagrant com o VirtualBox no Linux Fedora, facilitando a criação e gerenciamento de maquinas virtuais.
 ---
 
-O [Vagrant](https://www.vagrantup.com) é uma ferramenta de linha de comando, que abstrair a complexidade dos principais virtualizadores do mercado e nos permite criar maquinas virtuais de uma maneira extremamente simples, para utilizá-lo basta criar o arquivo de [manifesto](https://pt.stackoverflow.com/questions/137147/qual-%c3%a9-o-significado-de-um-arquivo-manifest-em-programa%c3%a7%c3%a3o) e a partir deste arquivo uma [máquina virtual](https://pt.wikipedia.org/wiki/M%C3%A1quina_virtual) será provida com tudo que precisamos configurado, sendo assim vamos ver como instalá-lo no [Fedora](https://getfedora.org/pt_BR/).
+O [Vagrant](https://www.vagrantup.com) é uma ferramenta de linha de comando([CLI](https://pt.wikipedia.org/wiki/Interface_de_linha_de_comandos)), que abstrai a complexidade dos principais virtualizadores do mercado e nos permite criar maquinas virtuais de uma maneira extremamente simples, para utilizá-lo basta criar o arquivo de [manifesto](https://pt.stackoverflow.com/questions/137147/qual-%c3%a9-o-significado-de-um-arquivo-manifest-em-programa%c3%a7%c3%a3o) e à partir deste arquivo uma [máquina virtual](https://pt.wikipedia.org/wiki/M%C3%A1quina_virtual) será provida com tudo que precisamos configurado, sendo assim vamos ver como instalá-lo no [Fedora](https://getfedora.org/pt_BR/).
 
 ## Requisitos
 
@@ -48,7 +51,7 @@ vagrant up
 
 ## Acessar a VM
 
-O acesso a VM é feito via SSH, facilitando as nossas vidas o Vagrant disponibiliza o comando abaixo para nós conectarmos com VM, assim não precisamos nos preocupar com usuários, endereços IP ou senhas.
+O acesso a VM é feito via SSH, facilitando às nossas vidas o Vagrant disponibiliza o comando abaixo para nós conectarmos a VM, assim não precisamos nos preocupar com usuários, endereços IP ou senhas.
 
 {% highlight sh %}
 vagrant ssh
