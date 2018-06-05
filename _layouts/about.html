@@ -10,6 +10,7 @@ layout: layout-default
   </figure>
   {% endif %}
   <meta itemprop="name" content="{{ page.author | default: site.author }}">
-  <meta itemprop="description" content="{{ page.title }} {{ page.author | default: site.author }}">
-  {{ content }}
+  <div itemprop="description" >
+    {{ content }}
+  </div>
 </section>
