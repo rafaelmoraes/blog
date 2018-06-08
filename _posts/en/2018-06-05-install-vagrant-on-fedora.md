@@ -3,7 +3,7 @@ date: 2018-06-05 17:22:00
 translations: /instalar-vagrant-no-fedora
 read_in: 8
 title: Install Vagrant on Fedora 27 and 28
-keyword: install use vagrant fedora 27 28
+keyword: install use vagrant fedora 27 28 virtualbox
 description: Tutorial for install the Vagrant with the VirtualBox on Linux Fedora, making easier the creation and management of virtual machines.
 ---
 
@@ -29,6 +29,18 @@ rm vagrant_*.rpm*
 The Vagrant by default not uses conventional installation images, those that you access the site of your Linux distribution preferred, make the download and install on you machine or server, instead those images the Vagrant uses the [boxes](https://www.vagrantup.com/docs/boxes.html), basically Vagrant boxes are images derived from official distributions, where everything that not is helpful or essential for Vagrant is dropped, anyone can create own boxes, you can find some boxes compatible with VirtualBox [here](https://app.vagrantup.com/boxes/search?utf8=%E2%9C%93&sort=created&provider=virtualbox&q=).
 
 For provide a virtual machine the Vagrant uses the file *Vagrantfile* where stay all details about the provisioning, for example: shared files, amount of RAM memory, IP address, shared ports, software that are installed automatically, among [others](https://www.vagrantup.com/docs/vagrantfile/).
+
+## Install vagrant-vbguest plugin
+
+Vagrant supports use of plugins that extends your functions, [here](https://github.com/hashicorp/vagrant/wiki/Available-Vagrant-Plugins) you find some available plugins.
+
+For improve performance and usability the VirtualBox provides the [VBox Guest Additions](https://www.virtualbox.org/manual/ch04.html#idm1873) that basicaly is a set of softwares and drivers that should be installed on guest operational system, for we don't install it manually on every guest operational system, we'll install the plugin [vagrant-vbguest](https://github.com/dotless-de/vagrant-vbguest) and it will do automaticaly the instalation.
+
+{% highlight sh %}
+vagrant plugin install vagrant-vbguest
+{% endhighlight %}
+
+Now that vagrant-vbguest went installed it will install and configure VBox Guest Additions always that a virtual machine will started though Vagrant.
 
 ## Create Vagrantfile
 
@@ -94,3 +106,6 @@ Then we arrived to the end of this tutorial, now you should able to easily to cr
 
 * [https://www.vagrantup.com/docs/index.html](https://www.vagrantup.com/docs/index.html)
 * [https://app.vagrantup.com/fedora/boxes/28-cloud-base](https://app.vagrantup.com/fedora/boxes/28-cloud-base)
+* [https://github.com/dotless-de/vagrant-vbguest](https://github.com/dotless-de/vagrant-vbguest)
+* [https://www.virtualbox.org/manual/ch04.html#idm1873](https://www.virtualbox.org/manual/ch04.html#idm1873)
+* [https://github.com/hashicorp/vagrant/wiki/Available-Vagrant-Plugins](https://github.com/hashicorp/vagrant/wiki/Available-Vagrant-Plugins)

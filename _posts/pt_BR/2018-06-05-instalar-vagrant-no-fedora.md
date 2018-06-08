@@ -3,7 +3,7 @@ date: 2018-06-05 15:20:00
 translations: /install-vagrant-on-fedora
 read_in: 8
 title: Instalar o Vagrant no Fedora 27 e 28
-keyword: instalar vagrant fedora
+keyword: instalar vagrant fedora virtualbox
 description: Tutorial para instalar o Vagrant com o VirtualBox no Linux Fedora, facilitando a criação e gerenciamento de maquinas virtuais.
 ---
 
@@ -25,9 +25,21 @@ sudo dnf install -y ./vagrant*.rpm && \
 rm vagrant_*.rpm*
 {% endhighlight %}
 
-O Vagrant por padrão não utiliza imagens convencionais de instalação, aquela que você acessa o site da sua distro Linux preferida, faz o download e instala na sua maquina ou servidor, ao invés dessas imagens o Vagrant utiliza as [boxes](https://www.vagrantup.com/docs/boxes.html), que basicamente são imagens derivadas das distribuição oficiais, onde tudo que não é útil ou essencial para o Vagrant é removido, qualquer um pode criar as suas próprias boxes, você pode encontrar algumas boxes compatíveis com o VirtualBox [aqui](https://app.vagrantup.com/boxes/search?utf8=%E2%9C%93&sort=created&provider=virtualbox&q=).
+Por o Vagrant padrão não utiliza imagens convencionais de instalação, aquela que você acessa o site da sua distro Linux preferida, faz o download e instala na sua maquina ou servidor, ao invés dessas imagens o Vagrant utiliza as [boxes](https://www.vagrantup.com/docs/boxes.html), que basicamente são imagens derivadas das distribuição oficiais, onde tudo que não é útil ou essencial para o Vagrant é removido, qualquer um pode criar as suas próprias boxes, você pode encontrar algumas boxes compatíveis com o VirtualBox [aqui](https://app.vagrantup.com/boxes/search?utf8=%E2%9C%93&sort=created&provider=virtualbox&q=).
 
 Para prover uma maquina virtual o Vagrant utiliza o arquivo *Vagrantfile* onde ficam todas os detalhes sobre o provisionamento, por exemplo: arquivos que serão compartilhados, quantidade de memória RAM, o endereço IP, as portas que serão compartilhadas, os programas que serão instalados automaticamente, entre [outros](https://www.vagrantup.com/docs/vagrantfile/).
+
+## Instalar o plugin vagrant-vbguest
+
+O Vagrant suporta o uso de plugins que estendem as suas funcionalidades, [aqui](https://github.com/hashicorp/vagrant/wiki/Available-Vagrant-Plugins) você encontra alguns dos plugins disponíveis.
+
+Para melhorar a performance e usabilidade o VirtualBox disponibiliza o [VBox Guest Additions](https://www.virtualbox.org/manual/ch04.html#idm1873) que basicamente é um conjunto de softwares e drivers que devem ser instalados no sistema operacional instalado na maquina virtual, para não termos que instalá-lo manualmente em todos os sistemas operacionais, iremos instalar o plugin [vagrant-vbguest](https://github.com/dotless-de/vagrant-vbguest) e ele fará automaticamente a instalação.
+
+{% highlight sh %}
+vagrant plugin install vagrant-vbguest
+{% endhighlight %}
+
+Agora que o vagrant-vbguest foi instalado ele irá instalar e configurar o VBox Guest Additions sempre que uma maquina virtual for iniciada através do Vagrant.
 
 ## Criar o Vagrantfile
 
@@ -93,3 +105,6 @@ Com isso chegamos ao fim deste tutorial e agora você deve ser capaz de facilmen
 
 * [https://www.vagrantup.com/docs/index.html](https://www.vagrantup.com/docs/index.html)
 * [https://app.vagrantup.com/fedora/boxes/28-cloud-base](https://app.vagrantup.com/fedora/boxes/28-cloud-base)
+* [https://github.com/dotless-de/vagrant-vbguest](https://github.com/dotless-de/vagrant-vbguest)
+* [https://www.virtualbox.org/manual/ch04.html#idm1873](https://www.virtualbox.org/manual/ch04.html#idm1873)
+* [https://github.com/hashicorp/vagrant/wiki/Available-Vagrant-Plugins](https://github.com/hashicorp/vagrant/wiki/Available-Vagrant-Plugins)
