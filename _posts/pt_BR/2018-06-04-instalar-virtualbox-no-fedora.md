@@ -75,3 +75,4 @@ Agora você pode utilizar o sistema operacional que desejar sem a necessidade de
 
 * [https://www.virtualbox.org/wiki/Linux_Downloads](https://www.virtualbox.org/wiki/Linux_Downloads)
 * [https://www.virtualbox.org/manual/UserManual.html](https://www.virtualbox.org/manual/UserManual.html)
+* [https://www.virtualbox.org/manual/ch08.html#vboxmanage-extpack](https://www.virtualbox.org/manual/ch08.html#vboxmanage-extpack)
