@@ -34,7 +34,7 @@ For provide a virtual machine the Vagrant uses the file *Vagrantfile* where stay
 
 Vagrant supports use of plugins that extends your functions, [here](https://github.com/hashicorp/vagrant/wiki/Available-Vagrant-Plugins) you find some available plugins.
 
-For improve performance and usability the VirtualBox provides the [VBox Guest Additions](https://www.virtualbox.org/manual/ch04.html#idm1873) that basicaly is a set of softwares and drivers that should be installed on guest operational system, for we don't install it manually on every guest operational system, we'll install the plugin [vagrant-vbguest](https://github.com/dotless-de/vagrant-vbguest) and it will do automaticaly the instalation.
+For improve performance and usability the VirtualBox provides the [VBox Guest Additions](https://www.virtualbox.org/manual/ch04.html#idm1873) that basically is a set of software and drivers that should be installed on guest operational system, for we don't install it manually on every guest operational system, we'll install the plugin [vagrant-vbguest](https://github.com/dotless-de/vagrant-vbguest) and it will do automatically the installation.
 
 {% highlight sh %}
 vagrant plugin install vagrant-vbguest
@@ -54,7 +54,7 @@ The *Vagrantfile* uses syntax of [Ruby](https://www.ruby-lang.org/)(but you don'
 
 ## Start VM
 
-After create the *Vagrantfile* we going to request to Vagrant that start the VM, the command below works as follows: it look up by the *Vagrantfile* beginning from current directory until the root of your file system, after to find and to read the *Vagrantfile* it will check if the box defined in the file there is locally, case not exists,  the download will made and only then the VM will started, with all configurations defined in the *Vagrantfile*.
+After create the *Vagrantfile* we going to request to Vagrant that start the VM, the command below works as follows: it look up by the *Vagrantfile* beginning from current directory until the root of your file system, after to find and to read the *Vagrantfile* it will check if the box defined in the file there is locally, case not exists, the download will made and only then the VM will started, with all configurations defined in the *Vagrantfile*.
 
 All this process can be delay depending of your hardware and network, mainly when is necessary to download of the box.
 
