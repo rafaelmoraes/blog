@@ -1,6 +1,6 @@
 ---
 date: "2018-05-28 21:30:00"
-title: "Install Ruby with rbenv on Fedora 27 e 28"
+title: "Install Ruby with rbenv on Fedora 27 and 28"
 keywords: "how to install ruby rbenv fedora 27 28"
 read_in: 8
 translations: /instalar-ruby-com-rbenv-no-fedora
