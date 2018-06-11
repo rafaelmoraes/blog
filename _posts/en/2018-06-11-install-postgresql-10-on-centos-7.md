@@ -1,18 +1,18 @@
 ---
-date: 2018-06-11 18:15:00
-title: Instalar PostgreSQL 10 no CentOS 7
-keywords: instalar configurar postgresql 10 centos 7
-read_in: 7
-translations: /install-postgresql-10-on-centos-7
+date: 2018-06-11 12:08:00
+title: Install PostgreSQL 10 on CentOS 7
+keywords: install configure postgresql 10 centos 7
+read_in: 6
+translations: /instalar-postgresql-10-no-centos-7
 ---
 
-Neste artigo veremos como instalar o [PostgreSQL 10](https://www.postgresql.org/) no [CentOS 7](https://www.centos.org/), se você está com pressa ou não tem interesse nos detalhes da instalação vá até o final do artigo e use o script que contém todos os comandos necessários, então vamos lá.
+At this article we'll see how to install [PostgreSQL 10](https://www.postgresql.org/) on [CentOS 7](https://www.centos.org/), if you're hurry or not have interest about installation details go to the end of this article and use the script that contains all necessary commands, so let's beginning.
 
-> O objetivo deste tutorial é instalar e configurar uma instância do PostgreSQL destinada ao **ambiente de desenvolvimento**, várias medidas necessárias para um ambiente de produção são ignoradas.
+> The goal this tutorial is to install and to configure a instance of PostgreSQL to be used on **development environment**, many configurations necessary to production environment are ignored.
 
-## Instalação
+## Installation
 
-Antes de instalar precisamos fazer o CentOS ignorar o PostgreSQL presente em seus repositórios, para isso execute o texto abaixo no terminal do CentOS.
+Before install we'll need to do CentOS ignore the PostgreSQL of your repositories, for do it execute the text below in CentOS terminal.
 
 {% highlight sh %}
 sudo sed -e '/exclude=postgresql\*/d' \
@@ -20,22 +20,22 @@ sudo sed -e '/exclude=postgresql\*/d' \
   -i /etc/yum.repos.d/CentOS-Base.repo
 {% endhighlight %}
 
-Tomado as devidas precauções podemos prosseguir com a instalação, note que estamos utilizando os pacotes oficiais do PostgreSQL.
+Taken due precautions we can advance with the installation, notice that we're using official PostgreSQL packages.
 
 {% highlight sh %}
 sudo yum install -y https://download.postgresql.org/pub/repos/yum/10/redhat/rhel-7-x86_64/pgdg-centos10-10-2.noarch.rpm && \
 sudo yum install -y postgresql10 postgresql10-server
 {% endhighlight %}
 
-Agora é necessário executar o setup para criar os arquivos necessários.
+Now is necessary to run the setup to create the necessary files.
 
 {% highlight sh %}
 sudo /usr/pgsql-10/bin/postgresql-10-setup initdb
 {% endhighlight %}
 
-## Configurações de acesso
+## Access configurations
 
-Primeiramente vamos permitir o acesso de clientes remotos.
+Firstly we'll allow access for remote clients.
 
 {% highlight sh %}
 sudo sed -e "/listen_addresses = '\*'/d" \
@@ -43,55 +43,55 @@ sudo sed -e "/listen_addresses = '\*'/d" \
   -i /var/lib/pgsql/10/data/postgresql.conf
 {% endhighlight %}
 
-E agora vamos liberar o acesso remoto para todos os usuários, banco de dados e endereços IP.
+And now we'll allow the remote access for all user, databases and IP addresses.
 
 {% highlight sh %}
 sudo sed 's/host.*all.*all.*127.0.0.1.*ident/host all all all md5/' \
   -i /var/lib/pgsql/10/data/pg_hba.conf
 {% endhighlight %}
 
-## Inicialização
+## Initialization
 
-Após a etapa de instalação, vamos configurar o início automático junto com a inicialização do CentOS e iniciar o PostgreSQL.
+After the installation step, we'll to configure auto-start on CentOS boot and start PostgreSQL.
 
 {% highlight sh %}
 sudo systemctl enable postgresql-10.service && \
 sudo systemctl start postgresql-10.service
 {% endhighlight %}
 
-Caso ocorra algum problema, você pode verificar o que deu errado executando o comando abaixo.
+If happen some problem, you can to check what went wrong running the command below.
 
 {% highlight sh%}
 sudo systemctl status postgresql-10.service
 {% endhighlight %}
 
-## Criar banco de dados e usuário
+## Create database and user
 
-Com o PostgreSQL funcionando, chegou a hora de finalmente criar um usuário e um banco de dados, neste caso o nome de usuário e a senha serão o valor retornado pela variável *$USER*, ou seja o usuário do CentOS que executou o comando, mas você é livre para utilizar os valores que desejar.
+With PostgreSQL running, it's time to finally to create an user and a database, on this case the user-name and the password will to be the value return to *$USER* variable, that is the user of the CentOS that ran the command, but you is free to use the values that you wish.
 
 {% highlight sh %}
 sudo -u postgres createdb $USER
 sudo -u postgres psql -U postgres -d $USER -c "CREATE ROLE $USER WITH SUPERUSER LOGIN PASSWORD '$USER';"
 {% endhighlight %}
 
-Para verificar se tudo deu certo, execute o comando abaixo e você deverá acessar o [CLI](https://pt.wikipedia.org/wiki/Interface_de_linha_de_comandos) do PostgreSQL sem precisar informar nenhum parâmetro.
+To confirm if all went right, run the command below and you'll should access the PostgreSQL [CLI](https://en.wikipedia.org/wiki/Command-line_interface) without to need inform any parameter.
 
 {% highlight sh %}
 psql
 {% endhighlight %}
 
-Caso não consiga acessar, sugiro que você desinstale complemente o PostgreSQL com o comando abaixo e refaça o tutorial desde o início.
+Case you can't access, I suggest to you uninstall completely the PostgreSQL with command below and rehash the tutorial from the begin.
 
 {% highlight sh %}
 sudo yum remove -y pgdg-centos10 postgresql10 postgresql10-server && \
 sudo rm -rf /var/lib/pgsql/10
 {% endhighlight %}
 
-## Somente para os apressados
+## Only for the hurried
 
-Se você está com pressa ou não tem interesse nos detalhes da instalação, o script abaixo é um compilado de todos os comandos presentes neste artigo, execute-o e o PostgreSQL será instalado.
+If you're hurry or not worried at installation details, the script below is a compiled with all commands presents in this article, run it and PostgreSQL will be installed.
 
-> Se você seguiu o passo a passo **não** precisa executar este script.
+> If you followed the step-by-step **not** need to run this script.
 
 {% highlight sh %}
 sudo sed -e '/exclude=postgresql\*/d' \
@@ -112,11 +112,12 @@ sudo -u postgres psql -U postgres -d $USER -c "CREATE ROLE $USER WITH SUPERUSER 
 
 {% endhighlight %}
 
-## Concluindo
+## Wrapping up
 
-Chegamos ao fim deste tutorial, agora você tem instalado e configurado no seu CentOS um PostgreSQL para ser utilizado em ambientes de desenvolvimento, até à próxima. =]
+We reached at end of this tutorial, now you have installed and configured on your CentOS a PostgreSQL to be used in development environments, see you next time. =]
 
-## Fontes
+## Resources
+
 * [https://wiki.postgresql.org/wiki/YUM_Installation](https://wiki.postgresql.org/wiki/YUM_Installation)
 * [https://www.postgresql.org/docs/current/static/sql-createrole.html](https://www.postgresql.org/docs/current/static/sql-createrole.html)
 * [https://www.postgresql.org/docs/current/static/app-createuser.html](https://www.postgresql.org/docs/current/static/app-createuser.html)
