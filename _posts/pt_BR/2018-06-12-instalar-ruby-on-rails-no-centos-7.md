@@ -1,6 +1,6 @@
 ---
 date: 2018-06-12 18:20:00
-title: Instalar o Ruby on Rails no CentOS 7
+title: Instalar Ruby on Rails no CentOS 7
 read_in: 7
 keywords: instalar configurar ruby rails centos 7
 translations: /install-ruby-on-rails-on-centos-7
