@@ -6,7 +6,7 @@ translations: /configure-ruby-on-rails-with-postgresql-10-on-centos-7
 read_in: 5
 ---
 
-Para utilizar o [PostgreSQL 10](https://www.postgresql.org/) com o [Ruby on Rails](https://rubyonrails.org/) no [CentOS 7](https://www.centos.org/), exige uma configuração um pouco diferente do habitual, neste artigo veremos como realizá-la.
+Utilizar o [PostgreSQL 10](https://www.postgresql.org/) com o [Ruby on Rails](https://rubyonrails.org/) no [CentOS 7](https://www.centos.org/), exige uma configuração um pouco diferente do habitual, neste artigo veremos como realizá-la.
 
 Caso você ainda não tenha o PostgreSQL, você pode instalá-lo seguindo [este tutorial](https://rafaelmoraes.pro/instalar-postgresql-10-no-centos-7).
 

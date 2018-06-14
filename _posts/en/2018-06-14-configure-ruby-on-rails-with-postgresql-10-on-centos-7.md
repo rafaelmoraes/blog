@@ -6,10 +6,9 @@ translations: /configurar-ruby-on-rails-com-postgresql-10-no-centos-7
 read_in: 5
 ---
 
-For to use [PostgreSQL 10](https://www.postgresql.org/) with [Ruby on Rails](https://rubyonrails.org/) on  [CentOS 7](https://www.centos.org/), demands a configuration a bit different from usual, in this article we'll see how to make it.
+Use [PostgreSQL 10](https://www.postgresql.org/) with [Ruby on Rails](https://rubyonrails.org/) on [CentOS 7](https://www.centos.org/), demand a configuration a bit different from usual, in this article we'll see how to make it.
 
 If you haven't the PostgreSQL, you can to install it following [this tutorial](https://rafaelmoraes.pro/instalar-postgresql-10-no-centos-7).
-
 
 ## Install requirements
 
@@ -21,7 +20,7 @@ sudo sed -e '/exclude=postgresql\*/d' \
   -i /etc/yum.repos.d/CentOS-Base.repo
 {% endhighlight %}
 
-Now install the needed requirements.
+Now install the requirements.
 
 {% highlight sh %}
 sudo yum install -y https://download.postgresql.org/pub/repos/yum/10/redhat/rhel-7-x86_64/pgdg-centos10-10-2.noarch.rpm
@@ -30,13 +29,13 @@ sudo yum install -y postgresql10-devel
 
 ## Configure the Bundler
 
-After install the requirements, add the gem [pg](https://rubygems.org/gems/pg) in Gemfile of your project and configure on [bundler](https://bundler.io) the path to *pg_config*, otherwise the installation of gem will fail.
+After install the requirements, add the gem [pg](https://rubygems.org/gems/pg) in Gemfile of your project and configure on [bundler](https://bundler.io) the path to *pg_config*, otherwise the installation gem will fail.
 
 {% highlight sh %}
 bundle config build.pg --with-pg-config=/usr/pgsql-10/bin/pg_config
 {% endhighlight %}
 
-And to finally install the gem, at your project root path, run.
+And finally to install the gem, at your project root path, run.
 
 {% highlight sh %}
 bundle install
