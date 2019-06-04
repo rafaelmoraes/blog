@@ -80,10 +80,10 @@ theme: minima
 
 ### SEO ###
 # google_analytics: UA-119153666-1 # rafaelmoraes.tech
-google_analytics: UA-120007953-1 # rafaelmoraes.pro
+google_analytics: UA-120007953-1 # rafaelmoraes.github.io
 
 title: Rafael Moraes
-url: "https://rafaelmoraes.pro"
+url: "https://rafaelmoraes.github.io"
 permalink: /:title
 author: Rafael Moraes
 
@@ -115,4 +115,4 @@ defaults:
       lang: 'pt_BR'
 
 disqus:
-  shortname: rafaelmoraes-pro
+  # shortname: rafaelmoraes-pro

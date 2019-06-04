@@ -116,5 +116,5 @@ Até mais! =]
 
 ## Fontes
 * [https://github.com/rbenv/ruby-build/wiki](https://github.com/rbenv/ruby-build/wiki)
-* [https://rafaelmoraes.pro/instalar-ruby-com-rbenv-no-fedora](https://rafaelmoraes.pro/instalar-ruby-com-rbenv-no-fedora)
+* [https://rafaelmoraes.github.io/instalar-ruby-com-rbenv-no-fedora](https://rafaelmoraes.github.io/instalar-ruby-com-rbenv-no-fedora)
 * [https://nodejs.org/en/download/package-manager/#enterprise-linux-and-fedora](https://nodejs.org/en/download/package-manager/#enterprise-linux-and-fedora)

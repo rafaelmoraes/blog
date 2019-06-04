@@ -8,7 +8,7 @@ read_in: 5
 
 Use [PostgreSQL 10](https://www.postgresql.org/) with [Ruby on Rails](https://rubyonrails.org/) on [CentOS 7](https://www.centos.org/), demand a configuration a bit different from usual, in this article we'll see how to make it.
 
-If you haven't the PostgreSQL, you can to install it following [this tutorial](https://rafaelmoraes.pro/instalar-postgresql-10-no-centos-7).
+If you haven't the PostgreSQL, you can to install it following [this tutorial](https://rafaelmoraes.github.io/instalar-postgresql-10-no-centos-7).
 
 ## Install requirements
 
@@ -53,5 +53,5 @@ See you!
 
 ## Resources
 
-* [https://rafaelmoraes.pro/instalar-postgresql-10-no-centos-7](https://rafaelmoraes.pro/instalar-postgresql-10-no-centos-7)
+* [https://rafaelmoraes.github.io/instalar-postgresql-10-no-centos-7](https://rafaelmoraes.github.io/instalar-postgresql-10-no-centos-7)
 * [https://stackoverflow.com/questions/6040583/cant-find-the-libpq-fe-h-header-when-trying-to-install-pg-gem](https://stackoverflow.com/questions/6040583/cant-find-the-libpq-fe-h-header-when-trying-to-install-pg-gem)
